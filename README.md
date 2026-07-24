@@ -3,17 +3,21 @@
 - Problem
   - The file system is not writable
 - Solution
-  - sudo steamos-readonly disable
+  ```bash
+  sudo steamos-readonly disable
+  ```
 
 ---
 
 - Problem
   - Pacman doesn't work
 - Solution
-  - sudo pacman-key --init
-  - sudo pacman-key --populate archlinux
-  - sudo pacman-key --populate holo
-  - sudo pacman -Scc --noconfirm
+  ```bash
+  sudo pacman-key --init
+  sudo pacman-key --populate archlinux
+  sudo pacman-key --populate holo
+  sudo pacman -Scc --noconfirm
+  ```
 
 ---
 
@@ -21,9 +25,13 @@
   - Vital Synth won't run in flatpak Bitwig because it is looking for libcurl-gnutls.so.4
 - Solution
   - Install libcurl-gnutls.so.4 with pacman (this might be optional...)
-    - sudo pacman -S libcurl-gnutls
+  ```bash
+  sudo pacman -S libcurl-gnutls
+  ```
   - Run Bitwig outside of the flatpak to bypass sandboxing
-    - /var/lib/flatpak/app/com.bitwig.BitwigStudio/current/active/files/bitwig-studio
+    ```bash
+    /var/lib/flatpak/app/com.bitwig.BitwigStudio/current/active/files/bitwig-studio
+    ```
     - You can edit you menu item and put this under "Program" from the KDE Menu Editor (also remove the Command-line arguments section)
 
 ---
