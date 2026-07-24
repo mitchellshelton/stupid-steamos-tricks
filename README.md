@@ -84,7 +84,7 @@ sudo systemctl start cronie.service
 sudo systemctl enable cronie.service
 
 # prep basic C and C++ development environment
-#sudo pacman -S --noconfirm base-devel cmake git qt6 glibc linux-api-headers qt6-tools gdb clang
+sudo pacman -S --noconfirm base-devel cmake git qt6 glibc linux-api-headers qt6-tools gdb clang
 
 # Add server alias
 # This adds a custom line to your hosts file for local development or servers
