@@ -1,5 +1,21 @@
 # Stupid SteamOS Tricks
 
+I am very happy with SteamOS and the related hardware that Valve has released. Both the Steam Deck and Steam Machine are excellent gaming machines. When the Steam Machine was announced I decided to abandon macOS and Windows and make the permanent switch to Linux and SteamOS. I used the Steam Deck as my daily primary computer starting in November of 2025. In July I was finally able to purchase a Steam Machine and SteamOS continues to be my daily driver.
+As much as I enjoy these machines and SteamOS I do not think that Linux is ready for the everyday computer user. I love Linux and have used it both professionally and personally for many years. Unfortunately, it remains nearly impossible to get anything useful out of the operating system without heavily using the command line. Despite the best efforts by the community, it is still a difficult operating system to make daily use of.
+SteamOS does a lot to make this easier. KDE Plasma is a great graphical shell and provides a wealth of tools to make things easier. Even with that, the command line is still a necessary part of using SteamOS. Below is a series of commands and tips to help make the journey a little easier. SteamOS has some quirks of its own. Built on Arch Linux with some bizarre decisions from Valve, it brings an often even more difficult learning curve than something like Ubuntu. Good luck on your journey and please feel free to contribute to this document to help it grow. While this is mostly here for my personal benefit, I wanted to share it with others as the journey to gather and learn this information was often filled with frustration. Even with that frustration, at almost a year in as a full time Linux user, I can't see myself going back to macOS or Windows.
+
+---
+
+- Problem
+  - You don't know the sudo password for the deck user
+- Solution
+  - A password must be manually set for the deck user
+  ```bash
+  passwd
+  ```
+
+---
+
 - Problem
   - The file system is not writable
 - Solution
@@ -25,9 +41,9 @@
   - Vital Synth won't run in flatpak Bitwig because it is looking for libcurl-gnutls.so.4
 - Solution
   - Install libcurl-gnutls.so.4 with pacman (this might be optional...)
-  ```bash
-  sudo pacman -S libcurl-gnutls
-  ```
+    ```bash
+    sudo pacman -S libcurl-gnutls
+    ```
   - Run Bitwig outside of the flatpak to bypass sandboxing
     ```bash
     /var/lib/flatpak/app/com.bitwig.BitwigStudio/current/active/files/bitwig-studio
@@ -37,7 +53,7 @@
 ---
 
 - Problem
-  - When Steam updates it deletes anything outside of "/home/deck". This means anything installed with pacman must be reinstalled.
+  - When SteamOS updates it deletes anything outside of "/home/deck". This means anything installed with pacman must be reinstalled.
 - Solution
   - Create a shell script that you can run after an update to restore your settings.
 
